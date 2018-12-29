@@ -12,9 +12,10 @@
 <br>
 
 **Mine is:**
+
 | Device | Config |
 | ------ | ----------- |
-| GPU   | NVIDIA Corporation GM108M [GeForce 940MX] <br> (Test Command: `lspci | grep NVIDIA`) |
+| GPU   | NVIDIA Corporation GM108M GeForce 940MX <br> (Test Command: lspci &#124; grep NVIDIA) |
 | OS | Ubuntu 18.04 LTS |
 | CPU    | Intel Corporation Xeon E3-1200 v6/7th Gen Core Processor <br> (Same `lspci` command can be used to list it) |
 

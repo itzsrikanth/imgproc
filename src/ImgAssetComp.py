@@ -1,11 +1,20 @@
 #!/anaconda3/bin/python
 
+########## Requirements ############
+# 1) Pickle images
+# 2) Image transformation for matching like JPG to PNG
+# 3) Using Numba
+# 4) File size
+# 5) cmd colouring & process percentage status
+####################################
+
+
 import os
 import re
 import argparse
 
 import json
-from functools import reduce
+# from functools import reduce
 import math, operator
 
 import cv2
@@ -49,7 +58,7 @@ for dir in args.dir:
     for root, dirs, files in os.walk(dir):
         for file in files:
             if re.search(r'\.(?:jpg|png)$', file) is not None:
-                currImg = Image.open(os.path.join(root, file))#/Users/srikanthsh/dev/test/tmp.py
+                currImg = Image.open(os.path.join(root, file))
                 for img in images.keys():
                     # only images with similar aspect ratio(AR) will be same,
                     # so we try to match images only if they have similar AR
@@ -78,6 +87,6 @@ for dir in args.dir:
                         
                         pc = (np.count_nonzero(absdiff > tolerance) * 100) / (absdiff.shape[0] * absdiff.shape[1])
                         if pc < diffPercent:
-                            print("%0.2f" % pc, '%   :  ' + os.path.join(dir, file) + ' & ' + img)
+                            print("%0.2f" % pc, '%\n' + os.path.join(root, file) + '\n' + img + '\n')
                 images[dir + '/' + file] = currImg
 

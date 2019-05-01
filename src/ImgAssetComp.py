@@ -88,5 +88,5 @@ for dir in args.dir:
                         pc = (np.count_nonzero(absdiff > tolerance) * 100) / (absdiff.shape[0] * absdiff.shape[1])
                         if pc < diffPercent:
                             print("%0.2f" % pc, '%\n' + os.path.join(root, file) + '\n' + img + '\n')
-                images[dir + '/' + file] = currImg
+                images[root + '/' + file] = currImg
 
